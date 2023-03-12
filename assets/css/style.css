@@ -1,0 +1,20 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+span{
+    color: red;
+}
+#quiz-box{
+    background-color: lightcyan;
+    height: 700px;
+    width: 700px;
+}
