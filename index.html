@@ -8,27 +8,22 @@
     <title>Coding quiz</title>
 </head>
 <body>
-    <main>
-        <header>
+    <main class="container">
+        <header class="header">
         <h1>coding quiz</h1>
         <p>time left:<span id="time">10:00</span></p>
         </header>
 
-        <section id="quiz-box">
-            <div class="quizone" >
-                <div class="quiztwo">
-                    <h2>question 1</h2>
-                    <p>whats a number</p>
-                    <input type="radio" name="q1" value="a"> s <br>
-                    <input type="radio" name="q1" value="b" id="yes"> 3 <br>
-                    <input type="radio" name="q1" value="c"> fg <br>
-                    <input type="radio" name="q1" value="d"> whw <br>
-                    
-                </div>
-                <button id="submit">submit</button>
+        <section id="question-container"  class="hide">
+            <div id="question"> question</div>
+            <div id="answer-buttons" class="btn-grid">
             </div>
-            <h4 id="confirm"></h4>
         </section>
+        <div class="controls">
+            <button id="start-btn" class="start-btn btn">start</button>
+            <button id="restart-btn" class="restart-btn btn hide">restart</button>
+        </div>
+
     </main>
     <script src="./assets/javascript/script.js"></script>
 </body>
