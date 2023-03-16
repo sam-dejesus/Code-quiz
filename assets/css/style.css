@@ -1,10 +1,19 @@
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+:root{
+    --hue-wrong: 0;
+    --hue-correct: 145;
 }
-header{
+.container{
+  
+    height: 700px;
+    width: 700px;
+    border: 4px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+}
+.header{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -13,34 +22,15 @@ header{
 span{
     color: red;
 }
-#quiz-box{
-    background-color: lightcyan;
-    height: 700px;
-    width: 700px;
-    border: 4px solid red;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-}
-.quizone{
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
 }
 
-.quiztwo{
-height: 400px;
-width: 400px;
-background-color:white;
-border: 3px solid black;
-margin-bottom: 20px;
-}
-
-button{
+.btn{
     color: white;
     background-color: blueviolet;
     height: 100px;
@@ -48,4 +38,27 @@ button{
     border-radius: 10px;
     font-size: 50px;
     
+}
+.btn:hover{
+    border-color: black;
+}
+.btn.correct{
+    --hue:var(--hue-correct);
+    color: black;
+}
+.btn.wrong{
+    --hue: var(--hue-wrong);
+}
+.controls{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.start-btn, .restart-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+.hide{
+    display: none;
 }
