@@ -2,6 +2,10 @@
     --hue-wrong: 0;
     --hue-correct: 145;
 }
+body{
+    display: flex;
+    justify-content: center;
+}
 .container{
   
     height: 700px;
