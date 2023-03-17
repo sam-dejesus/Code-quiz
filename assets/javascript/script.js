@@ -2,8 +2,10 @@
 var startButton = document.getElementById('start-btn')
 var restartButton = document.getElementById('restart-btn')
 var questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
+var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
+var scoreControlsElement = document.getElementById('score-controls')
+var timeBox = document.getElementById('timebox')
 let currentQuestionIndex = undefined;
 var correct = 0;
 var incorrect = 0;
@@ -75,6 +77,15 @@ function selectAnswer(e){
     }
 }
 function gameOver (){
+    var score = Math.round((countdowntime / 60)* 10);
+    questionContainerElement.classList.add('hide')
+    restartButton.classList.remove('hide')
+    restartButton.addEventListener('click', go);
+    var scoreElement = document.createElement('h2');
+    scoreElement.innerText = `your score: ${score}`;
+    questionContainerElement.parentElement.insertBefore(scoreElement, questionContainerElement.nextSibling);
+    scoreControlsElement.classList.remove('hide')
+    timeBox.classList.add('hide')
 
 }
 function youLose(){

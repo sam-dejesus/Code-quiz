@@ -11,7 +11,8 @@
     <main class="container">
         <header class="header">
         <h1>coding quiz</h1>
-        <p>time left:<span id="time">10:00</span></p>
+        <p id="timebox">time left:<span id="time">10:00</span></p>
+        <a href="./assets/score.html">score</a>
         </header>
 
         <section id="question-container"  class="hide">
@@ -22,6 +23,14 @@
         <div class="controls">
             <button id="start-btn" class="start-btn btn">start</button>
             <button id="restart-btn" class="restart-btn btn hide">restart</button>
+            
+
+        </div>
+        <div class="score-controls hide" id="score-controls">
+            <label for="name">initials:</label>
+            <input type="text"><br>
+            <button class="btn" id="submit">submit</button>
+
         </div>
 
     </main>
