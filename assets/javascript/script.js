@@ -1,5 +1,6 @@
 
 var startButton = document.getElementById('start-btn')
+var restartButton = document.getElementById('restart-btn')
 var questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
@@ -7,12 +8,12 @@ let currentQuestionIndex = undefined;
 var correct = 0;
 var incorrect = 0;
 startButton.addEventListener('click', startGame)
-
+var countdowntime = 600;
 function startGame(){
    startButton.classList.add('hide')
 questionContainerElement.classList.remove('hide')
 //------------------------------
-var countdowntime = 600;
+
 
 var countdownEL = document.getElementById("time");
 var countdown = setInterval(function(){
@@ -23,7 +24,7 @@ var countdown = setInterval(function(){
    if (countdowntime < 0){
       clearInterval(countdown);
       countdownEL.textContent = "times up"
-      gameOver();
+      youLose();
    }
 }, 1000);
 //--------------------
@@ -58,11 +59,31 @@ function selectAnswer(e){
             gameOver();
         }
     } else {
-        incorrect++;
+        countdowntime -= 200;
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length){
+            showQuestion();
+        }else{
+            gameOver();
+        }
+        if (countdown <= 0){
+            clearInterval(countdown)
+            countdownEL.textContent = "times up";
+            youLose();
+        } 
+      
     }
 }
 function gameOver (){
 
+}
+function youLose(){
+restartButton.classList.remove('hide')
+questionContainerElement.classList.add('hide')
+restartButton.addEventListener('click', go)
+}
+function go(){
+    location.reload();
 }
    const questions = [
       {
