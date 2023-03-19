@@ -6,6 +6,8 @@ var questionElement = document.getElementById('question')
 var answerButtonsElement = document.getElementById('answer-buttons')
 var scoreControlsElement = document.getElementById('score-controls')
 var timeBox = document.getElementById('timebox')
+var userName = document.getElementById('msg')
+var submitBtn = document.getElementById('submit')
 let currentQuestionIndex = undefined;
 var correct = 0;
 var incorrect = 0;
@@ -86,8 +88,20 @@ function gameOver (){
     questionContainerElement.parentElement.insertBefore(scoreElement, questionContainerElement.nextSibling);
     scoreControlsElement.classList.remove('hide')
     timeBox.classList.add('hide')
-
+submitBtn.addEventListener('click', function(){
+    
+    
+    var userData = {
+    userName: userName.value,
+    score: score
 }
+localStorage.setItem("userData", JSON.stringify(userData));
+})
+}
+
+
+
+
 function youLose(){
 restartButton.classList.remove('hide')
 questionContainerElement.classList.add('hide')
