@@ -1,0 +1,24 @@
+.link{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    border: 4px solid black;
+    font-size: 2rem;
+  
+}
+.container-title{
+ background-color: lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 4px solid black;
+}
+.score-bored{
+    display: flex;
+    flex-direction: column;
+    background-color: limegreen;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid black;
+}
