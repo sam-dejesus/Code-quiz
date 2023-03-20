@@ -2,22 +2,28 @@
     display: flex;
     justify-content: start;
     align-items: start;
-    border: 4px solid black;
+   
     font-size: 2rem;
   
 }
 .container-title{
+    font-family: Rubik Iso;
  background-color: lightgrey;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 4px solid black;
+  animation: color-change 1s infinite;
+}
+@keyframes color-change{
+    0%  { color: black;}
+    50%{ color: red;}
 }
 .score-bored{
     display: flex;
     flex-direction: column;
-    background-color: limegreen;
+    color: blueviolet;
     justify-content: center;
     align-items: center;
     border: 2px solid black;

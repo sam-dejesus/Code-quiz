@@ -1,16 +1,37 @@
-:root{
-    --hue-wrong: 0;
-    --hue-correct: 145;
-}
+
 body{
     display: flex;
-    justify-content: center;
+    margin-left: 250px;
+
+   
+}
+.link{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+
+    font-size: 2rem;
+  
+}
+
+h1{
+    font-family: Rubik Iso;
+    font-size: 3rem;
+    animation: color-change 1s infinite;
+}
+@keyframes color-change{
+    0%  { color: black;}
+    50%{ color: red;}
+}
+p{
+    font-family:Edu NSW ACT Foundation;
+    font-size: 20px;
+    padding:  20px;
 }
 .container{
   
     height: 700px;
     width: 700px;
-    border: 4px solid black;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,12 +48,17 @@ body{
 span{
     color: red;
 }
+.question-style{
+    font-size: 2rem;
+    font-weight: bold;
+}
 
 .btn-grid{
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
     margin: 20px 0;
+   
 }
 
 .btn{
@@ -41,20 +67,15 @@ span{
     height: 100px;
     width: 200px;
     border-radius: 10px;
-    font-size: 50px;
+    font-size: 20px;
     margin: 2rem;
     
 }
 .btn:hover{
-    border-color: black;
+   border: 5px solid blue;
+
 }
-.btn.correct{
-    --hue:var(--hue-correct);
-    color: black;
-}
-.btn.wrong{
-    --hue: var(--hue-wrong);
-}
+
 .controls{
     display: flex;
     justify-content: center;
