@@ -1,4 +1,4 @@
-
+// these are all of the global var used in the application
 var startButton = document.getElementById('start-btn')
 var restartButton = document.getElementById('restart-btn')
 var questionContainerElement = document.getElementById('question-container')
@@ -10,18 +10,16 @@ var userName = document.getElementById('msg')
 var submitBtn = document.getElementById('submit')
 var timer = document.getElementById('div-timer')
 var intro = document.getElementById('intro')
-let currentQuestionIndex = undefined;
-
-startButton.addEventListener('click', startGame)
 var countdowntime = 600;
+var currentQuestionIndex = undefined;
+// will start the game
+startButton.addEventListener('click', startGame)
+//the function that starts the game it styles the webpage and starts the timer function
 function startGame(){
     intro.classList.add('hide')
     timer.classList.remove('hide')
    startButton.classList.add('hide')
 questionContainerElement.classList.remove('hide')
-//------------------------------
-
-
 var countdownEL = document.getElementById("time");
 var countdown = setInterval(function(){
    var minutes = Math.floor(countdowntime / 60);
@@ -34,11 +32,11 @@ var countdown = setInterval(function(){
       youLose();
    }
 }, 1000);
-//--------------------
+
 currentQuestionIndex = 0;
 showQuestion()
 }
-
+// allows the questions and buttons to change and create buttons for each answer
 function showQuestion(){
     const question = questions[currentQuestionIndex];
    questionElement.innerText = question.question;
@@ -54,7 +52,7 @@ function showQuestion(){
        answerButtonsElement.appendChild(button);
    })
    }
-//-----------
+// these are the controls for the answers and what happens if the right or wrong answer is pressed
 function selectAnswer(e){
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct;
@@ -68,7 +66,7 @@ function selectAnswer(e){
             gameOver();
         }
     } else {
-        countdowntime -= 180;
+        countdowntime -= 120;
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length){
             showQuestion();
@@ -83,7 +81,8 @@ function selectAnswer(e){
       
     }
 }
-
+//when the quiz is finished the gameOver function will be called and it will display the input tag 
+//to get the users name and allows them to save their score
 function gameOver (){
     var score = Math.round((countdowntime / 60)* 10);
     questionContainerElement.classList.add('hide')
@@ -96,6 +95,7 @@ function gameOver (){
     timeBox.classList.add('hide')
 submitBtn.addEventListener('click', function(){
     if(userName.value === ""){
+        alert("you need to write something in the name box")
         return null;
     }
     var userData = {
@@ -108,15 +108,17 @@ localStorage.setItem("userData", JSON.stringify(userData));
 
 
 
-
+// if time runs out the you lose function will display and give the user options to restart the quiz
 function youLose(){
 restartButton.classList.remove('hide')
 questionContainerElement.classList.add('hide')
 restartButton.addEventListener('click', go)
 }
+// if the user presses the restart button the go function will be called and refresh the page
 function go(){
     location.reload();
 }
+// contains all questions and answers that will be displayed
    const questions = [
       {
        question: 'what is javascript?',
@@ -131,7 +133,7 @@ function go(){
        question: 'tailwind and bootstrap are?',
        answers:[
            {text: 'are both api', correct:false},
-           {text:'are both frameworks for css', correct:false},
+           {text:'are both css frameworks', correct:false},
            {text: 'A & B', correct:true},
            {text:'a type of coffee',  correct:false}
        ]
@@ -139,7 +141,7 @@ function go(){
       {
        question: 'a function inside an object is?',
        answers:[
-           {text: 'its called a function inside an object', correct:false},
+           {text: 'a class', correct:false},
            {text:'super object', correct:false},
            {text: 'constructor function', correct:false},
            {text:'a method',  correct:true}
@@ -173,12 +175,12 @@ function go(){
         ]
        },
        {
-        question: 'the insides of a functions parentheses is called ?',
+        question: 'the insides of a functions parentheses is?',
         answers:[
-            {text: 'target', correct:false},
-            {text:'event', correct:false},
+            {text: 'the target', correct:false},
+            {text:'the event', correct:false},
             {text: 'A & B', correct:false},
-            {text:'parameters',  correct:true}
+            {text:'the parameters',  correct:true}
         ]
        },
        {

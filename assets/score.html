@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>scorebored</title>
+    <!-- links to the style sheet and to google fonts -->
     <link rel="stylesheet" href="./css/style2.css">
     <link href="https://fonts.googleapis.com/css2?family=Climate+Crisis&family=Edu+NSW+ACT+Foundation&family=Rubik+Iso&display=swap" rel="stylesheet">
 </head>
@@ -15,14 +16,16 @@
     <div class="container-title">
 <h1><strong>High Score</strong></h1>
     </div>
-    <div class="score-bored" id="score-bored">
+<!-- the information obtained from local storage will apear inside score-bored -->
+    <div class="score-board" id="score-board">
 
     </div>
+    <!-- to avoid confusion i added the javascript code here this code will grab the information from local storage and present it on the screen -->
     <script>
         var post = document.createElement('h2')
         var userData = JSON.parse(localStorage.getItem('userData'))
         post.innerText = `name: ${userData.userName} score: ${userData.score}`
-        document.getElementById('score-bored').appendChild(post);
+        document.getElementById('score-board').appendChild(post);
      </script>
 </body>
 </html>
