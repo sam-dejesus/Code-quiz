@@ -20,7 +20,7 @@
     0%  { color: black;}
     50%{ color: red;}
 }
-.score-bored{
+.score-board{
     display: flex;
     flex-direction: column;
     color: blueviolet;

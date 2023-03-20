@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- first link is for the style sheet the next three links are for google fonts -->
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,9 +12,12 @@
     <title>Coding quiz</title>
 </head>
 <body>
+    <!-- class link is for styling the link that take the different webpages -->
     <div class="link">
         <a href="./assets/score.html">score</a>
     </div>
+    <!-- class container styles the webpage header styles the welcome information and the time for the quiz  class hide is used
+         to control what shows up in the webpage using javascript-->
     <main class="container">
         <header class="header">
         <h1>welcome to the</h1>
@@ -28,20 +32,23 @@
         <p id="timebox">time left:<span id="time">10:00</span></p>
         </div>
         </header>
-
+<!--  question-container is the div that controls the questions and answer divs from showing up
+id question and answer-buttons are used to change to questions and answers using javascript-->
         <section id="question-container"  class="hide">
             <div id="question" class="question-style"> question</div>
             <div id="answer-buttons" class="btn-grid">
             </div>
         </section>
+        <!-- controls contains the start and restart buttons -->
         <div class="controls">
             <button id="start-btn" class="start-btn btn">start</button>
             <button id="restart-btn" class="restart-btn btn hide">restart</button>
             
 
         </div>
+        <!-- when the quiz is done this box will show up and grab data for local storage -->
         <div class="score-controls hide" id="score-controls">
-            <label for="name">initials:</label>
+            <label for="name">name:</label>
             <input type="text" id="msg"><br>
             <button class="btn" id="submit">submit</button>
 
